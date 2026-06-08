@@ -23,10 +23,16 @@ export class PageListener {
             return  
         }
         window.addEventListener('load', () => {
-            console.log('location changed: ', location.pathname)
-            if(this.pages.get(location.pathname)) {
-                this.pages.get(location.pathname).render()
+            const routeName = this.normalizeRoute(location.pathname)
+
+            if(this.pages.get(routeName)) {
+                this.pages.get(routeName).render()
             }
         })
+        this.listening = true
+    }
+
+    normalizeRoute(pathname) {
+        return pathname.replace(/index\.html$/, "")
     }
 }

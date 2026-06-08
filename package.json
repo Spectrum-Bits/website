@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./static/css/site.css --minify",
+    "watch:css": "tailwindcss -i ./src/tailwind.css -o ./static/css/site.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "marked": "^18.0.5"
+  }
+}

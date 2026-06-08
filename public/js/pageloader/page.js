@@ -1,4 +1,6 @@
 
+import { marked } from "../../vendor/marked/marked.esm.js";
+
 export class Page {
 
     constructor(routeName, contentMd) { // use pop state to detect when to activate
@@ -8,7 +10,6 @@ export class Page {
 
     render() {
         const pageContent = document.getElementById('page-content')
-        console.log('output: ',marked.parse(this.contentMd))
         pageContent.innerHTML = marked.parse(this.contentMd)
     }
 }

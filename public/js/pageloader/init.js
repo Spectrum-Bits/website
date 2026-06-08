@@ -6,12 +6,12 @@ function handleListener() {
 
     if (!window.pageListener) {
         pl = new PageListener();
-        pl.createPage('/contact/','*Contact page | WIP*')
-        pl.createPage('/contests/','*Contests page | WIP*')
-        pl.createPage('/sponsors/','*Sponsors page | WIP*')
-        pl.createPage('/mentors/','*Mentors page | WIP*')
-        pl.createPage('/team/','*Team page | WIP*') 
-        pl.createPage('/robots/','*Robots page | WIP*')
+        pl.createPage('/static/contact/','*Contact page | WIP*')
+        pl.createPage('/static/contests/','*Contests page | WIP*')
+        pl.createPage('/static/sponsors/','*Sponsors page | WIP*')
+        pl.createPage('/static/mentors/','*Mentors page | WIP*')
+        pl.createPage('/static/team/','*Team page | WIP*') 
+        pl.createPage('/static/robots/','*Robots page | WIP*')
     } else {
         pl = window.pageListener;
     }

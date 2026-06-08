@@ -16,6 +16,7 @@ export class PageListener {
         }
         const pageInstance = new Page(routeName,contentMd)
         this.pages.set(routeName,pageInstance)
+        console.log("made page: ", routeName, contentMd)
     }
 
     listen() {
@@ -23,10 +24,17 @@ export class PageListener {
             return  
         }
         window.addEventListener('load', () => {
-            console.log('location changed: ', location.pathname)
-            if(this.pages.get(location.pathname)) {
-                this.pages.get(location.pathname).render()
+            const routeName = this.normalizeRoute(location.pathname)
+            console.log(routeName)
+            if(this.pages.get(routeName)) {
+             //    console.log('loading markdown: ', TouchList.pages.get(routeName).contentMd)
+                this.pages.get(routeName).render()
             }
         })
+        this.listening = true
+    }
+
+    normalizeRoute(pathname) {
+        return pathname.replace(/index\.html$/, "")
     }
 }
