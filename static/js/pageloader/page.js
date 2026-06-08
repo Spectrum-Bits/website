@@ -10,6 +10,7 @@ export class Page {
 
     render() {
         const pageContent = document.getElementById('page-content')
+        console.log('rendering')
         pageContent.innerHTML = marked.parse(this.contentMd)
     }
 }
