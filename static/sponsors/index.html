@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpectrumBits | Team</title>
+    <title>SpectrumBits | Sponsors</title>
     <link rel="icon" type="image/x-icon" href="../assets/SpectrumBits.jpg">
     <link rel="stylesheet" href="../css/site.css">
 
@@ -55,8 +55,29 @@
         }
 
         #page-content {
-            margin-top:50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 104px);
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1rem 4rem;
             text-align: center;
+        }
+
+        .page-placeholder {
+            width: min(100%, 48rem);
+        }
+
+        .placeholder-image {
+            width: min(100%, 36rem);
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            margin: 0 auto;
+            background: #f4f0ff;
+            border: 1px solid rgba(109,40,217,.12);
+            border-radius: 18px;
+            box-shadow: 0 18px 35px rgba(0,0,0,.12);
         }
 
         .nav-link::after {
@@ -143,7 +164,37 @@
     </div>
 </header>
 
-<div id="page-content"></div>
+<main id="page-content">
+    <section class="robot-showcase">
+        <div class="robot-copy">
+            <p class="robot-kicker">Support the team</p>
+            <h1>SpectrumBits Sponsors</h1>
+            <p class="robot-lead">
+                Highlight the organizations and people who help the team build, travel, and compete.
+            </p>
+            <div class="robot-details">
+                <div>
+                    <span>Partners</span>
+                    <strong>Coming soon</strong>
+                </div>
+                <div>
+                    <span>Support</span>
+                    <strong>Equipment and travel</strong>
+                </div>
+                <div>
+                    <span>Contact</span>
+                    <strong>Sponsor us</strong>
+                </div>
+            </div>
+            <p>
+                Add sponsor logos, benefits, and contribution details here as the sponsor program is finalized.
+            </p>
+        </div>
+        <figure class="robot-media">
+            <img src="../assets/placeholder.svg" alt="Sponsors placeholder">
+        </figure>
+    </section>
+</main>
 </div>
 
 <script>

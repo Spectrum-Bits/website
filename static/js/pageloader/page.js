@@ -1,16 +1,17 @@
-
-import { marked } from "../../vendor/marked/marked.esm.js";
-
 export class Page {
 
-    constructor(routeName, contentMd) { // use pop state to detect when to activate
-        this.routeName = routeName 
-        this.contentMd = contentMd
-    } 
+    constructor(routeName, contentHtml) {
+        this.routeName = routeName;
+        this.contentHtml = contentHtml;
+    }
 
     render() {
-        const pageContent = document.getElementById('page-content')
-        console.log('rendering')
-        pageContent.innerHTML = marked.parse(this.contentMd)
+        const pageContent = document.getElementById("page-content");
+
+        if (!pageContent) {
+            return;
+        }
+
+        pageContent.innerHTML = this.contentHtml;
     }
 }

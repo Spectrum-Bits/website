@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+    <title id="title">Placeholder image</title>
+    <desc id="desc">A simple placeholder panel for future page imagery.</desc>
+    <rect width="800" height="600" fill="#f4f0ff"/>
+    <rect x="40" y="40" width="720" height="520" rx="28" fill="#ffffff" stroke="#d8c8ff" stroke-width="4"/>
+    <path d="M120 450l155-155 95 95 65-65 245 245H120z" fill="#d8c8ff"/>
+    <circle cx="580" cy="180" r="70" fill="#facc15"/>
+    <text x="400" y="310" text-anchor="middle" fill="#6d28d9" font-family="Arial, sans-serif" font-size="56" font-weight="700">Placeholder</text>
+</svg>

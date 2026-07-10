@@ -16,25 +16,35 @@ export class PageListener {
         }
         const pageInstance = new Page(routeName,contentMd)
         this.pages.set(routeName,pageInstance)
-        console.log("made page: ", routeName, contentMd)
     }
 
     listen() {
         if(this.listening) {
             return  
         }
-        window.addEventListener('load', () => {
+
+        const renderCurrentPage = () => {
             const routeName = this.normalizeRoute(location.pathname)
-            console.log(routeName)
-            if(this.pages.get(routeName)) {
-             //    console.log('loading markdown: ', TouchList.pages.get(routeName).contentMd)
-                this.pages.get(routeName).render()
+            const page = this.pages.get(routeName)
+
+            if(page) {
+                page.render()
             }
-        })
+        }
+
+        if(document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', renderCurrentPage)
+        } else {
+            renderCurrentPage()
+        }
+
         this.listening = true
     }
 
     normalizeRoute(pathname) {
-        return pathname.replace(/index\.html$/, "")
+        const cleanPath = pathname.replace(/index\.html$/, "").replace(/\/$/, "")
+        const routeName = cleanPath.split('/').filter(Boolean).pop()
+
+        return routeName ? `/${routeName}/` : '/'
     }
 }

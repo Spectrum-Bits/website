@@ -55,7 +55,13 @@
         }
 
         #page-content {
-            margin-top:50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 104px);
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1rem 4rem;
             text-align: center;
         }
 
@@ -143,7 +149,59 @@
     </div>
 </header>
 
-<div id="page-content"></div>
+<main id="page-content">
+    <section class="robot-showcase">
+        <div class="robot-copy">
+            <p class="robot-kicker">Team roster</p>
+            <h1>SpectrumBits Team</h1>
+            <p class="robot-lead">
+                A simple roster view for team members and their roles.
+            </p>
+            <div class="robot-details">
+                <div>
+                    <span>Season</span>
+                    <strong>Current</strong>
+                </div>
+                <div>
+                    <span>Format</span>
+                    <strong>Name and role</strong>
+                </div>
+                <div>
+                    <span>Status</span>
+                    <strong>Ready to update</strong>
+                </div>
+            </div>
+            <div class="team-list" aria-label="Team members">
+                <div class="team-row team-row-heading">
+                    <span>Name</span>
+                    <span>Role</span>
+                </div>
+                <div class="team-row">
+                    <span>Member 1</span>
+                    <span>Team Captain</span>
+                </div>
+                <div class="team-row">
+                    <span>Member 2</span>
+                    <span>Programming</span>
+                </div>
+                <div class="team-row">
+                    <span>Member 3</span>
+                    <span>Mechanical Design</span>
+                </div>
+                <div class="team-row">
+                    <span>Member 4</span>
+                    <span>Driver</span>
+                </div>
+            </div>
+            <p>
+                Replace these placeholder rows with the final team names and responsibilities when the roster is ready.
+            </p>
+        </div>
+        <figure class="robot-media">
+            <img src="../assets/placeholder.svg" alt="Team placeholder">
+        </figure>
+    </section>
+</main>
 </div>
 
 <script>

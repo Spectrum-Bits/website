@@ -1,40 +1,55 @@
-
-import { Page } from "./page.js"
+import { Page } from "./page.js";
 
 export class PageListener {
 
     constructor() {
-        this.pages = new Map()
-        window.pageListener = this
-        this.listening=false 
+        this.pages = new Map();
+        this.listening = false;
+        window.pageListener = this;
     }
 
-    createPage(routeName,contentMd) {
-        if(this.pages.get(routeName)) {
-            console.warn('Cannot add the same page twice!')
-            return 
+    createPage(routeName, contentHtml) {
+        if (this.pages.has(routeName)) {
+            console.warn("Cannot add the same page twice!");
+            return;
         }
-        const pageInstance = new Page(routeName,contentMd)
-        this.pages.set(routeName,pageInstance)
-        console.log("made page: ", routeName, contentMd)
+
+        this.pages.set(routeName, new Page(routeName, contentHtml));
     }
 
     listen() {
-        if(this.listening) {
-            return  
-        }
-        window.addEventListener('load', () => {
-            const routeName = this.normalizeRoute(location.pathname)
-            console.log(routeName)
-            if(this.pages.get(routeName)) {
-             //    console.log('loading markdown: ', TouchList.pages.get(routeName).contentMd)
-                this.pages.get(routeName).render()
+
+        if (this.listening) return;
+
+        const renderCurrentPage = () => {
+
+            const routeName = this.normalizeRoute(location.pathname);
+
+            const page = this.pages.get(routeName);
+
+            if (page) {
+                page.render();
             }
-        })
-        this.listening = true
+
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", renderCurrentPage);
+        } else {
+            renderCurrentPage();
+        }
+
+        this.listening = true;
     }
 
     normalizeRoute(pathname) {
-        return pathname.replace(/index\.html$/, "")
+
+        const clean = pathname
+            .replace(/index\.html$/, "")
+            .replace(/\/$/, "");
+
+        const last = clean.split("/").filter(Boolean).pop();
+
+        return last ? `/${last}/` : "/";
     }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpectrumBits | Team</title>
+    <title>SpectrumBits | Contests</title>
     <link rel="icon" type="image/x-icon" href="../assets/SpectrumBits.jpg">
     <link rel="stylesheet" href="../css/site.css">
 
@@ -55,8 +55,21 @@
         }
 
         #page-content {
-            margin-top:50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 104px);
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1rem 4rem;
             text-align: center;
+        }
+
+        .contests-word {
+            color: var(--second);
+            font-size: clamp(3rem, 12vw, 7rem);
+            font-weight: 900;
+            line-height: 1;
         }
 
         .nav-link::after {
@@ -143,7 +156,37 @@
     </div>
 </header>
 
-<div id="page-content"></div>
+<main id="page-content">
+    <section class="robot-showcase">
+        <div class="robot-copy">
+            <p class="robot-kicker">Competition log</p>
+            <h1>FTC Contests</h1>
+            <p class="robot-lead">
+                Track the events, matches, and results for the current robotics season.
+            </p>
+            <div class="robot-details">
+                <div>
+                    <span>Program</span>
+                    <strong>FIRST Tech Challenge</strong>
+                </div>
+                <div>
+                    <span>Events</span>
+                    <strong>To be announced</strong>
+                </div>
+                <div>
+                    <span>Results</span>
+                    <strong>Coming soon</strong>
+                </div>
+            </div>
+            <p>
+                The contests page can grow into a season archive with schedules, awards, and match notes.
+            </p>
+        </div>
+        <figure class="robot-media">
+            <img src="../assets/placeholder.svg" alt="Contests placeholder">
+        </figure>
+    </section>
+</main>
 </div>
 
 <script>
