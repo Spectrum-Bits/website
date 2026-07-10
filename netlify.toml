@@ -1,4 +1,4 @@
 [build]
-publish = "../"
+publish = "public"
 command = ""
 
