@@ -12,6 +12,8 @@ export class Page {
             return;
         }
 
-        pageContent.innerHTML = this.contentHtml;
+        requestAnimationFrame(() => {
+            pageContent.innerHTML = this.contentHtml;
+        });
     }
 }

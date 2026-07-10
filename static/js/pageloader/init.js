@@ -191,7 +191,6 @@ const CONTACT_PAGE_MD = robotTemplate({
     mediaSrc: "../assets/phone.avif",
     mediaAlt: "SpectrumBits Contact"
 });
-
 const CONTESTS_PAGE_MD = robotTemplate({
     kicker: "Contests",
     title: "FTC",
