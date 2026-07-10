@@ -91,42 +91,110 @@ ${detailItems}
         </p>
     </div>
 
-    <figure class="robot-media">
-        <img 
-            src="${mediaSrc}" 
-            alt="${mediaAlt}"
-        >
-    </figure>
+   <figure
+    class="team-media"
+    style="align-self:flex-start;margin-top:0;border-radius:16px;overflow:hidden;"
+>
+    <img
+        src="${mediaSrc}"
+        alt="${mediaAlt}"
+        style="display:block;width:100%;height:100%;object-fit:cover;border-radius:16px;"
+    >
+</figure>
 </section>
 `;
 }
 
 const TEAM_LIST = `
 <div class="team-list" aria-label="SpectrumBits Team Members">
-    <div class="team-row team-row-heading">
-        <span>Name</span>
-        <span>Role</span>
-    </div>
+<div class="team-row team-row-heading">
+    <span>Name</span>
+    <span>Role</span>
+</div>
 
-    <div class="team-row">
-        <span>If you see this</span>
-        <span>template role</span>
-    </div>
+<!-- Leads -->
+<div class="team-row">
+    <span>Gabor Bogdan</span>
+    <span>Lead Software + Hardware</span>
+</div>
 
-    <div class="team-row">
-        <span>then I need the member list</span>
-        <span>template role</span>
-    </div>
+<div class="team-row">
+    <span>Diosan Stefan</span>
+    <span>Lead Hardware + Software</span>
+</div>
 
-    <div class="team-row">
-        <span>if you are still reading</span>
-        <span>template role</span>
-    </div>
+<div class="team-row">
+    <span>Cimpeni Eduard</span>
+    <span>Lead PR</span>
+</div>
 
-    <div class="team-row">
-        <span>I also need the sponsor list with details</span>
-        <span>template role</span>
-    </div>
+<!-- Software -->
+<div class="team-row">
+    <span>Mateiu Vladimir</span>
+    <span>Software + Hardware</span>
+</div>
+
+<div class="team-row">
+    <span>Hopârtean Radu Alexandru</span>
+    <span>Software</span>
+</div>
+
+<div class="team-row">
+    <span>Vadan Filip</span>
+    <span>Software + PR</span>
+</div>
+
+<!-- Hardware -->
+<div class="team-row">
+    <span>Chis Victor</span>
+    <span>Hardware</span>
+</div>
+
+<!-- PR + Mixed -->
+<div class="team-row">
+    <span>Tarmure Vanessa</span>
+    <span>PR + Hardware</span>
+</div>
+
+<div class="team-row">
+    <span>Schiau Alex</span>
+    <span>PR + Hardware</span>
+</div>
+
+<div class="team-row">
+    <span>Opris Ingrid</span>
+    <span>PR</span>
+</div>
+
+<div class="team-row">
+    <span>Lacusteanu Alex</span>
+    <span>PR</span>
+</div>
+
+<div class="team-row">
+    <span>Magdaș Teodora-Diana</span>
+    <span>PR</span>
+</div>
+
+<div class="team-row">
+    <span>Muresan David</span>
+    <span>PR</span>
+</div>
+
+<div class="team-row">
+    <span>Manole Maria</span>
+    <span>PR</span>
+</div>
+
+<div class="team-row">
+    <span>Pop Matei</span>
+    <span>PR</span>
+</div>
+
+<div class="team-row">
+    <span>Revnic Matei</span>
+    <span>PR</span>
+</div>
 </div>
 `;
 
