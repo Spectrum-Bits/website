@@ -1,0 +1,15 @@
+#!/bin/sh
+# Blocks committing local-only tooling config, even if force-added with `git add -f`.
+
+blocked_pattern='^\.claude/|^\.vscode/'
+blocked=$(git diff --cached --name-only --diff-filter=ACM | grep -E "$blocked_pattern")
+
+if [ -n "$blocked" ]; then
+	echo "commit blocked: these paths are local-only and must not be committed:" >&2
+	echo "$blocked" | sed 's/^/  /' >&2
+	echo "" >&2
+	echo "unstage with: git restore --staged <path>" >&2
+	exit 1
+fi
+
+exit 0

@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+:root {
+	--main: #ffffff;
+	--second: #6d28d9;
+	--third: #facc15;
+	--ink: #18181b;
+	--muted: #71717a;
+}
+
+body {
+	min-height: 100vh;
+	overflow-x: hidden;
+	color: var(--ink);
+	line-height: 1.5;
+
+	background:
+		radial-gradient(circle at top left, rgba(250, 204, 21, 0.18), transparent 35rem),
+		radial-gradient(circle at bottom right, rgba(109, 40, 217, 0.12), transparent 30rem),
+		linear-gradient(180deg, #ffffff 0%, #faf7ff 100%);
+}
+
+@layer components {
+	.glass {
+		background: rgba(255, 255, 255, 0.75);
+		backdrop-filter: blur(16px);
+		border: 1px solid rgba(109, 40, 217, 0.08);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+	}
+
+	.nav-link {
+		position: relative;
+		transition: 0.2s;
+	}
+
+	.nav-link:hover {
+		color: var(--second);
+	}
+
+	.nav-link::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		bottom: -6px;
+		width: 0;
+		height: 3px;
+		border-radius: 999px;
+		background: var(--third);
+		transition: 0.2s;
+		transform: translateX(-50%);
+	}
+
+	.nav-link:hover::after {
+		width: 100%;
+	}
+}
