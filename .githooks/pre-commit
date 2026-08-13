@@ -1,7 +1,7 @@
 #!/bin/sh
 # Blocks committing local-only tooling config, even if force-added with `git add -f`.
 
-blocked_pattern='^\.claude/|^\.vscode/'
+blocked_pattern='^\.claude/|^public_sverlte/\.vscode/'
 blocked=$(git diff --cached --name-only --diff-filter=ACM | grep -E "$blocked_pattern")
 
 if [ -n "$blocked" ]; then

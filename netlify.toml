@@ -1,4 +1,4 @@
 [build]
+base = "public_sverlte"
 publish = "build"
 command = "npm run build"
-
