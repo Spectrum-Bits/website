@@ -1,21 +1,25 @@
-# SpectrumBits Website
+# SpectrumBits Website (app)
 
-The SpectrumBits robotics team website.
+Built with SvelteKit, prerendered to static HTML via `@sveltejs/adapter-static`. This folder is the whole app — everything you need to develop, build, and deploy lives here. See the [repo root README](../README.md) for why it's namespaced in a subfolder, and [`../AGENTS.md`](../AGENTS.md) for a deeper architecture walkthrough.
 
-## Layout
+## Developing
 
-```
-.
-├── netlify.toml        # deploy config (points Netlify at public_sverlte/)
-├── .githooks/           # repo-wide git hooks (blocks local-only config from being committed)
-├── .claude/              # local-only, not in git
-└── public_sverlte/       # the actual SvelteKit project — app code, config, everything
+```sh
+npm install
+npm run dev -- --open
 ```
 
-Everything needed to build and run the site — source, config, dependencies — lives in [`public_sverlte/`](public_sverlte/). See [`public_sverlte/README.md`](public_sverlte/README.md) for how to develop, build, and check it.
+## Building
 
-For a fuller picture of how the site is put together (architecture, conventions, gotchas worth knowing before changing things), see [`AGENTS.md`](AGENTS.md).
+```sh
+npm run build
+```
 
-## Deploying
+This writes the prerendered site to `build/`, which is what Netlify publishes (see `../netlify.toml`). Preview it locally with `npm run preview`.
 
-Netlify builds from the `public_sverlte/` subfolder (`base` in `netlify.toml`) and publishes `public_sverlte/build/`, the prerendered static output.
+## Checks
+
+```sh
+npm run check   # type-check
+npm run lint    # prettier + eslint
+```
