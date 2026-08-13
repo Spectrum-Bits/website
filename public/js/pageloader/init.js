@@ -105,98 +105,191 @@ ${detailItems}
 `;
 }
 
-const TEAM_LIST = `
-<div class="team-list" aria-label="SpectrumBits Team Members">
-<div class="team-row team-row-heading">
-    <span>Name</span>
-    <span>Role</span>
-</div>
+function teamRosterTemplate({ kicker, title, lead, prMembers, engMembers }) {
 
-<!-- Leads -->
-<div class="team-row">
-    <span>Gabor Bogdan</span>
-    <span>Lead Software + Hardware</span>
-</div>
+    const memberCard = ({ name, role, photo, lead: isLead, mentor: isMentor }) => {
+        const isPlaceholder = photo.endsWith("SpectrumBits.jpg");
+        return `
+                <article class="member-card${isLead ? " is-lead" : ""}">
+                    <div class="member-avatar-wrap">
+                        <img class="member-avatar${isPlaceholder ? "" : " member-avatar-photo"}" src="${photo}" alt="${name}">
+                    </div>
+                    <h3 class="member-name">${name}</h3>
+                    <p class="member-role">${role}</p>
+                    ${isLead ? '<span class="lead-badge">Lead</span>' : ""}
+                    ${isMentor ? '<span class="mentor-badge">Mentor</span>' : ""}
+                </article>`;
+    };
 
-<div class="team-row">
-    <span>Diosan Stefan</span>
-    <span>Lead Hardware + Software</span>
-</div>
+    return `
+<style>
+.team-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 2.5rem;
+    width: 100%;
+    text-align: left;
+    margin-top: 2rem;
+}
 
-<div class="team-row">
-    <span>Cimpeni Eduard</span>
-    <span>Lead PR</span>
-</div>
+.team-column-title {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--second);
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    margin-bottom: 1.25rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid rgba(109,40,217,.12);
+}
 
-<!-- Software -->
-<div class="team-row">
-    <span>Mateiu Vladimir</span>
-    <span>Software + Hardware</span>
-</div>
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 1rem;
+}
 
-<div class="team-row">
-    <span>Hopârtean Radu Alexandru</span>
-    <span>Software</span>
-</div>
+.member-card {
+    background: rgba(255,255,255,.8);
+    border: 1px solid rgba(109,40,217,.08);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    padding: 1rem .75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: .25s ease;
+}
 
-<div class="team-row">
-    <span>Vadan Filip</span>
-    <span>Software + PR</span>
-</div>
+.member-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0,0,0,.08);
+}
 
-<!-- Hardware -->
-<div class="team-row">
-    <span>Chis Victor</span>
-    <span>Hardware</span>
-</div>
+.member-card.is-lead {
+    border-color: var(--third);
+    box-shadow: 0 0 0 2px rgba(250,204,21,.4);
+}
 
-<!-- PR + Mixed -->
-<div class="team-row">
-    <span>Tarmure Vanessa</span>
-    <span>PR + Hardware</span>
-</div>
+.member-avatar-wrap {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f4f0ff;
+    border: 2px solid rgba(109,40,217,.15);
+    margin-bottom: .65rem;
+    flex-shrink: 0;
+}
 
-<div class="team-row">
-    <span>Schiau Alex</span>
-    <span>PR + Hardware</span>
-</div>
+.member-avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+}
 
-<div class="team-row">
-    <span>Opris Ingrid</span>
-    <span>PR</span>
-</div>
+.member-avatar-photo {
+    transform: scale(1.35);
+    transform-origin: 50% 20%;
+}
 
-<div class="team-row">
-    <span>Lacusteanu Alex</span>
-    <span>PR</span>
-</div>
+.member-name {
+    font-size: .92rem;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: .2rem;
+}
 
-<div class="team-row">
-    <span>Magdaș Teodora-Diana</span>
-    <span>PR</span>
-</div>
+.member-role {
+    font-size: .68rem;
+    color: #71717a;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    margin-bottom: .4rem;
+}
 
-<div class="team-row">
-    <span>Muresan David</span>
-    <span>PR</span>
-</div>
+.lead-badge,
+.mentor-badge {
+    display: inline-block;
+    font-size: .62rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    padding: .2rem .55rem;
+    border-radius: 999px;
+}
 
-<div class="team-row">
-    <span>Manole Maria</span>
-    <span>PR</span>
-</div>
+.lead-badge {
+    background: var(--third);
+    color: #3f3f46;
+}
 
-<div class="team-row">
-    <span>Pop Matei</span>
-    <span>PR</span>
-</div>
+.mentor-badge {
+    background: var(--second);
+    color: #fff;
+}
 
-<div class="team-row">
-    <span>Revnic Matei</span>
-    <span>PR</span>
-</div>
-</div>
+@media (max-width: 800px) {
+    .team-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<section style="width:100%;text-align:left;">
+    <p class="robot-kicker" style="text-align:center;">${kicker}</p>
+    <h1 style="text-align:center;">${title}</h1>
+    <p class="robot-lead" style="text-align:center;">
+        ${lead}
+    </p>
+
+    <div class="team-columns">
+        <div class="team-column">
+            <h2 class="team-column-title">Public Relations</h2>
+            <div class="team-grid">${prMembers.map(memberCard).join("")}
+            </div>
+        </div>
+        <div class="team-column">
+            <h2 class="team-column-title">Engineering</h2>
+            <div class="team-grid">${engMembers.map(memberCard).join("")}
+            </div>
+        </div>
+    </div>
+</section>
 `;
+}
+
+const PR_MEMBERS = [
+    { name: "Cimpeni Eduard", role: "PR", photo: "../assets/mugshots/Cimpeni_Eduard.jpg", lead: true },
+    { name: "Revnic Matei", role: "PR", photo: "../assets/mugshots/Revnic_Matei.jpg" },
+    { name: "Tarmure Vanessa", role: "PR", photo: "../assets/mugshots/Tarmure_Vanessa.jpg" },
+    { name: "Opris Ingrid", role: "PR", photo: "../assets/mugshots/Opris_Ingrid.jpg" },
+    { name: "Lacusteanu Alex", role: "PR", photo: "../assets/mugshots/Lacusteanu_Alex.jpg" },
+    { name: "Magdaș Teodora-Diana", role: "PR", photo: "../assets/SpectrumBits.jpg" },
+    { name: "Muresan David", role: "PR", photo: "../assets/mugshots/Muresan_David.jpg" },
+    { name: "Manole Maria", role: "PR", photo: "../assets/SpectrumBits.jpg" },
+    { name: "Pop Matei", role: "PR", photo: "../assets/SpectrumBits.jpg" },
+];
+
+const ENGINEERING_MEMBERS = [
+    { name: "Gabor Bogdan", role: "Software + Hardware", photo: "../assets/mugshots/Gabor_bogdan.jpg", lead: true },
+    { name: "Diosan Stefan Andrei", role: "Hardware + Software", photo: "../assets/mugshots/Diosan_Stefan_Andrei.jpg", lead: true },
+    { name: "Mateiu Vladimir", role: "Software + Hardware", photo: "../assets/SpectrumBits.jpg" },
+    { name: "Hopârtean Radu Alexandru", role: "Software", photo: "../assets/SpectrumBits.jpg" },
+    { name: "Vadan Filip", role: "Software + PR", photo: "../assets/mugshots/Vadan_Filip.jpg" },
+    { name: "Chis Victor", role: "Hardware", photo: "../assets/mugshots/Chis_Victor.jpg" },
+    { name: "Schiau Alex", role: "PR + Hardware", photo: "../assets/mugshots/Schiau_Alex1.jpg" },
+    { name: "Hrusca Marc", role: "Hardware", photo: "../assets/mugshots/Hrusca_Marc.jpg" },
+];
 
 const ROBOTS_PAGE_MD = robotTemplate({
     kicker: "2026 Competition Robot",
@@ -213,20 +306,12 @@ Our current robot is still under development, we are in the process of testing a
     mediaAlt: "SpectrumBits FTC Robot"
 });
 
-const TEAM_PAGE_MD = robotTemplate({
+const TEAM_PAGE_MD = teamRosterTemplate({
     kicker: "Meet the Team",
     title: "SpectrumBits Members",
-    lead: "List of our Team Members and their roles within the team.",
-    details: [
-        { label: "Season", value: "2026–2027" },
-        { label: "Program", value: "FIRST Tech Challenge" },
-        // { label: "Status", value: "Recruiting & Building" }
-    ],
-    extra: TEAM_LIST,
-    body: `
-`,
-    mediaSrc: "../assets/team.jpeg",
-    mediaAlt: "SpectrumBits Team"
+    lead: "Meet the people behind SpectrumBits, organized by department.",
+    prMembers: PR_MEMBERS,
+    engMembers: ENGINEERING_MEMBERS
 });
 
 const CONTACT_PAGE_MD = robotTemplate({
