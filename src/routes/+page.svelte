@@ -37,7 +37,9 @@
 					/>
 				</div>
 
-				<p class="mx-auto mt-6 max-w-2xl text-lg text-zinc-600 md:text-xl lg:mx-0">
+				<p
+					class="mx-auto mt-6 max-w-2xl text-lg text-zinc-600 md:text-xl lg:mx-0 dark:text-zinc-300"
+				>
 					<i>"A Competitive Robotics Team"</i>
 				</p>
 
@@ -70,23 +72,39 @@
 		<!-- STATS -->
 		<div class="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
 			<div class="stat-card rounded-2xl p-4 text-center sm:p-6 md:rounded-3xl">
-				<h2 class="text-3xl font-black text-purple-700 sm:text-4xl md:text-5xl">17</h2>
-				<p class="mt-2 font-medium text-zinc-500">Members</p>
+				<h2
+					class="text-3xl font-black text-purple-700 sm:text-4xl md:text-5xl dark:text-purple-300"
+				>
+					17
+				</h2>
+				<p class="mt-2 font-medium text-zinc-500 dark:text-zinc-400">Members</p>
 			</div>
 
 			<div class="stat-card rounded-2xl p-4 text-center sm:p-6 md:rounded-3xl">
-				<h2 class="text-3xl font-black text-purple-700 sm:text-4xl md:text-5xl">2</h2>
-				<p class="mt-2 font-medium text-zinc-500">Departaments</p>
+				<h2
+					class="text-3xl font-black text-purple-700 sm:text-4xl md:text-5xl dark:text-purple-300"
+				>
+					2
+				</h2>
+				<p class="mt-2 font-medium text-zinc-500 dark:text-zinc-400">Departaments</p>
 			</div>
 
 			<div class="stat-card rounded-2xl p-4 text-center sm:p-6 md:rounded-3xl">
-				<h2 class="text-3xl font-black text-purple-700 sm:text-4xl md:text-5xl">1</h2>
-				<p class="mt-2 font-medium text-zinc-500">Robot</p>
+				<h2
+					class="text-3xl font-black text-purple-700 sm:text-4xl md:text-5xl dark:text-purple-300"
+				>
+					1
+				</h2>
+				<p class="mt-2 font-medium text-zinc-500 dark:text-zinc-400">Robot</p>
 			</div>
 
 			<div class="stat-card rounded-2xl p-4 text-center sm:p-6 md:rounded-3xl">
-				<h2 class="text-3xl font-black text-purple-700 sm:text-4xl md:text-5xl">1</h2>
-				<p class="mt-2 font-medium text-zinc-500">Goal</p>
+				<h2
+					class="text-3xl font-black text-purple-700 sm:text-4xl md:text-5xl dark:text-purple-300"
+				>
+					1
+				</h2>
+				<p class="mt-2 font-medium text-zinc-500 dark:text-zinc-400">Goal</p>
 			</div>
 		</div>
 
@@ -279,15 +297,15 @@
 	}
 
 	.stat-card {
-		background: rgba(255, 255, 255, 0.8);
+		background: rgba(var(--surface-rgb), 0.8);
 		backdrop-filter: blur(12px);
-		border: 1px solid rgba(109, 40, 217, 0.08);
+		border: 1px solid rgba(var(--brand-rgb), 0.08);
 		transition: 0.25s ease;
 	}
 
 	.stat-card:hover {
 		transform: translateY(-4px);
-		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+		box-shadow: 0 15px 40px var(--shadow-color);
 	}
 
 	@media (max-width: 768px) {

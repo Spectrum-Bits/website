@@ -1,11 +1,38 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
 :root {
 	--main: #ffffff;
 	--second: #6d28d9;
 	--third: #facc15;
 	--ink: #18181b;
 	--muted: #71717a;
+	--text-secondary: #3f3f46;
+	--surface-rgb: 255, 255, 255;
+	--brand-rgb: 109, 40, 217;
+	--avatar-bg: #f4f0ff;
+	--divider: rgba(24, 24, 27, 0.1);
+	--shadow-color: rgba(0, 0, 0, 0.08);
+	--badge-purple: #6d28d9;
+
+	color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+	--main: #0f0f14;
+	--second: #b794f6;
+	--third: #facc15;
+	--ink: #f4f4f5;
+	--muted: #a1a1aa;
+	--text-secondary: #d4d4d8;
+	--surface-rgb: 30, 30, 36;
+	--brand-rgb: 167, 139, 250;
+	--avatar-bg: #241a35;
+	--divider: rgba(255, 255, 255, 0.12);
+	--shadow-color: rgba(0, 0, 0, 0.4);
+
+	color-scheme: dark;
 }
 
 body {
@@ -13,6 +40,9 @@ body {
 	overflow-x: hidden;
 	color: var(--ink);
 	line-height: 1.5;
+	transition:
+		background-color 0.25s ease,
+		color 0.25s ease;
 
 	background:
 		radial-gradient(circle at top left, rgba(250, 204, 21, 0.18), transparent 35rem),
@@ -20,12 +50,19 @@ body {
 		linear-gradient(180deg, #ffffff 0%, #faf7ff 100%);
 }
 
+:root[data-theme='dark'] body {
+	background:
+		radial-gradient(circle at top left, rgba(250, 204, 21, 0.08), transparent 35rem),
+		radial-gradient(circle at bottom right, rgba(109, 40, 217, 0.22), transparent 30rem),
+		linear-gradient(180deg, #0f0f14 0%, #16121f 100%);
+}
+
 @layer components {
 	.glass {
-		background: rgba(255, 255, 255, 0.75);
+		background: rgba(var(--surface-rgb), 0.75);
 		backdrop-filter: blur(16px);
-		border: 1px solid rgba(109, 40, 217, 0.08);
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+		border: 1px solid rgba(var(--brand-rgb), 0.08);
+		box-shadow: 0 10px 30px var(--shadow-color);
 	}
 
 	.nav-link {

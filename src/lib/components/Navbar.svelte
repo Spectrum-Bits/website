@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import ThemeSwitch from './ThemeSwitch.svelte';
 
 	let mobileOpen = $state(false);
 
@@ -21,16 +22,19 @@
 				<!-- Logo -->
 				<div class="flex items-center gap-3">
 					<div>
-						<h1 class="text-lg font-black text-purple-700">SpectrumBits</h1>
-						<p class="text-xs text-zinc-500">Robotics Team</p>
+						<h1 class="text-lg font-black text-purple-700 dark:text-purple-300">SpectrumBits</h1>
+						<p class="text-xs text-zinc-500 dark:text-zinc-400">Robotics Team</p>
 					</div>
 				</div>
 
 				<!-- Desktop Links -->
 				<div class="hidden items-center gap-8 md:flex">
 					{#each links as link (link.href)}
-						<a href={link.href} class="nav-link font-medium text-zinc-600">{link.label}</a>
+						<a href={link.href} class="nav-link font-medium text-zinc-600 dark:text-zinc-300"
+							>{link.label}</a
+						>
 					{/each}
+					<ThemeSwitch />
 				</div>
 
 				<!-- Mobile Menu Button -->
@@ -46,11 +50,15 @@
 
 			<!-- Mobile Menu -->
 			{#if mobileOpen}
-				<div class="mt-5 border-t border-zinc-200 pt-5 md:hidden">
+				<div class="mt-5 border-t border-zinc-200 pt-5 md:hidden dark:border-zinc-700">
 					<div class="flex flex-col gap-4">
 						{#each links as link (link.href)}
-							<a href={link.href} class="text-zinc-600">{link.label}</a>
+							<a href={link.href} class="text-zinc-600 dark:text-zinc-300">{link.label}</a>
 						{/each}
+						<div class="mt-2 flex items-center gap-3">
+							<span class="text-sm text-zinc-500 dark:text-zinc-400">Theme</span>
+							<ThemeSwitch />
+						</div>
 					</div>
 				</div>
 			{/if}

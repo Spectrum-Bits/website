@@ -81,11 +81,11 @@
 		align-items: center;
 		width: 100%;
 		padding: 2rem;
-		background: hsla(0, 0%, 100%, 0.75);
+		background: rgba(var(--surface-rgb), 0.75);
 		backdrop-filter: blur(16px);
-		border: 1px solid rgba(109, 40, 217, 0.08);
+		border: 1px solid rgba(var(--brand-rgb), 0.08);
 		border-radius: 20px;
-		box-shadow: 0 20px 45px rgba(0, 0, 0, 0.07);
+		box-shadow: 0 20px 45px var(--shadow-color);
 		text-align: left;
 	}
 
@@ -102,7 +102,7 @@
 	}
 
 	.robot-copy p {
-		color: #52525b;
+		color: var(--text-secondary);
 		font-size: 1.05rem;
 		line-height: 1.75;
 	}
@@ -117,7 +117,7 @@
 	}
 
 	.robot-lead {
-		color: #3f3f46;
+		color: var(--text-secondary);
 		font-size: 1.18rem;
 		margin-bottom: 1.4rem;
 	}
@@ -130,15 +130,15 @@
 	}
 
 	.robot-details div {
-		background: hsla(0, 0%, 100%, 0.8);
-		border: 1px solid rgba(109, 40, 217, 0.1);
+		background: rgba(var(--surface-rgb), 0.8);
+		border: 1px solid rgba(var(--brand-rgb), 0.1);
 		border-radius: 8px;
 		padding: 0.9rem;
 	}
 
 	.robot-details span {
 		display: block;
-		color: #71717a;
+		color: var(--muted);
 		font-size: 0.75rem;
 		font-weight: 800;
 		letter-spacing: 0;

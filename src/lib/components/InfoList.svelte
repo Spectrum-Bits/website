@@ -30,8 +30,8 @@
 	}
 
 	.team-row {
-		background: hsla(0, 0%, 100%, 0.8);
-		border: 1px solid rgba(109, 40, 217, 0.1);
+		background: rgba(var(--surface-rgb), 0.8);
+		border: 1px solid rgba(var(--brand-rgb), 0.1);
 		border-radius: 8px;
 		padding: 0.9rem;
 		display: grid;
@@ -42,12 +42,12 @@
 	}
 
 	.team-row-heading {
-		background: rgba(109, 40, 217, 0.06);
+		background: rgba(var(--brand-rgb), 0.06);
 	}
 
 	.team-row-heading span {
 		display: block;
-		color: #71717a;
+		color: var(--muted);
 		font-size: 0.75rem;
 		font-weight: 800;
 		letter-spacing: 0;

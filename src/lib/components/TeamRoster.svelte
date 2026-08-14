@@ -95,7 +95,7 @@
 	}
 
 	.team-roster .robot-lead {
-		color: #3f3f46;
+		color: var(--text-secondary);
 		font-size: 1.18rem;
 		margin-bottom: 1.4rem;
 	}
@@ -117,7 +117,7 @@
 		letter-spacing: 0.03em;
 		margin-bottom: 1.25rem;
 		padding-bottom: 0.5rem;
-		border-bottom: 2px solid rgba(109, 40, 217, 0.12);
+		border-bottom: 2px solid rgba(var(--brand-rgb), 0.12);
 	}
 
 	.team-grid {
@@ -127,8 +127,8 @@
 	}
 
 	.member-card {
-		background: rgba(255, 255, 255, 0.8);
-		border: 1px solid rgba(109, 40, 217, 0.08);
+		background: rgba(var(--surface-rgb), 0.8);
+		border: 1px solid rgba(var(--brand-rgb), 0.08);
 		backdrop-filter: blur(10px);
 		border-radius: 14px;
 		padding: 1rem 0.75rem;
@@ -141,7 +141,7 @@
 
 	.member-card:hover {
 		transform: translateY(-4px);
-		box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+		box-shadow: 0 14px 30px var(--shadow-color);
 	}
 
 	.member-card.is-lead {
@@ -154,8 +154,8 @@
 		height: 84px;
 		border-radius: 50%;
 		overflow: hidden;
-		background: #f4f0ff;
-		border: 2px solid rgba(109, 40, 217, 0.15);
+		background: var(--avatar-bg);
+		border: 2px solid rgba(var(--brand-rgb), 0.15);
 		margin-bottom: 0.65rem;
 		flex-shrink: 0;
 	}
@@ -182,7 +182,7 @@
 
 	.member-role {
 		font-size: 0.68rem;
-		color: #71717a;
+		color: var(--muted);
 		text-transform: uppercase;
 		letter-spacing: 0.02em;
 		margin-bottom: 0.4rem;
@@ -205,7 +205,7 @@
 	}
 
 	.mentor-badge {
-		background: var(--second);
+		background: var(--badge-purple);
 		color: #fff;
 	}
 

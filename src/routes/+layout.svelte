@@ -1,8 +1,14 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import './layout.css';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import { initTheme } from '$lib/theme.svelte';
 
 	let { children } = $props();
+
+	onMount(() => {
+		initTheme();
+	});
 </script>
 
 <svelte:head>
