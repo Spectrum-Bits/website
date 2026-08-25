@@ -12,10 +12,10 @@ export const PR_MEMBERS: Member[] = [
 	{ name: 'Tarmure Vanessa', role: 'PR', photo: '/assets/mugshots/Tarmure_Vanessa.jpg' },
 	{ name: 'Opris Ingrid', role: 'PR', photo: '/assets/mugshots/Opris_Ingrid.jpg' },
 	{ name: 'Lacusteanu Alex', role: 'PR', photo: '/assets/mugshots/Lacusteanu_Alex.jpg' },
-	{ name: 'Magdaș Teodora-Diana', role: 'PR', photo: '/assets/SpectrumBits.jpg' },
+	{ name: 'Magdaș Teodora-Diana', role: 'PR', photo: '/assets/SpectrumBits.png' },
 	{ name: 'Muresan David', role: 'PR', photo: '/assets/mugshots/Muresan_David.jpg' },
-	{ name: 'Manole Maria', role: 'PR', photo: '/assets/SpectrumBits.jpg' },
-	{ name: 'Pop Matei', role: 'PR', photo: '/assets/SpectrumBits.jpg' }
+	{ name: 'Manole Maria', role: 'PR', photo: '/assets/SpectrumBits.png' },
+	{ name: 'Pop Matei', role: 'PR', photo: '/assets/SpectrumBits.png' }
 ];
 
 export const ENGINEERING_MEMBERS: Member[] = [
@@ -31,8 +31,8 @@ export const ENGINEERING_MEMBERS: Member[] = [
 		photo: '/assets/mugshots/Diosan_Stefan_Andrei.jpg',
 		lead: true
 	},
-	{ name: 'Mateiu Vladimir', role: 'Software + Hardware', photo: '/assets/SpectrumBits.jpg' },
-	{ name: 'Hopârtean Radu Alexandru', role: 'Software', photo: '/assets/SpectrumBits.jpg' },
+	{ name: 'Mateiu Vladimir', role: 'Software + Hardware', photo: '/assets/SpectrumBits.png' },
+	{ name: 'Hopârtean Radu Alexandru', role: 'Software', photo: '/assets/SpectrumBits.png' },
 	{ name: 'Vadan Filip', role: 'Software + PR', photo: '/assets/mugshots/Vadan_Filip.jpg' },
 	{ name: 'Chis Victor', role: 'Hardware', photo: '/assets/mugshots/Chis_Victor.jpg' },
 	{ name: 'Schiau Alex', role: 'PR + Hardware', photo: '/assets/mugshots/Schiau_Alex1.jpg' },

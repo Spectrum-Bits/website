@@ -13,7 +13,7 @@
 
 <svelte:head>
 	<title>SpectrumBits Robotics</title>
-	<link rel="icon" type="image/x-icon" href="/assets/SpectrumBits.jpg" />
+	<link rel="icon" type="image/x-icon" href="/assets/SpectrumBits.png" />
 </svelte:head>
 
 <Navbar />

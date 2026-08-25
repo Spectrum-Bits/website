@@ -28,7 +28,7 @@
 					/>
 
 					<img
-						src="/assets/SpectrumBits.jpg"
+						src="/assets/SpectrumBits.png"
 						alt="SpectrumBits Logo"
 						width="150"
 						height="150"

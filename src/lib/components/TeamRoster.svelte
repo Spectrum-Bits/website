@@ -17,7 +17,7 @@
 </script>
 
 {#snippet memberCard(member: Member)}
-	{@const isPlaceholder = member.photo.endsWith('SpectrumBits.jpg')}
+	{@const isPlaceholder = member.photo.endsWith('SpectrumBits.png')}
 	<article class="member-card" class:is-lead={member.lead}>
 		<div class="member-avatar-wrap">
 			<img
